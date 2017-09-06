@@ -31,8 +31,8 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+q kill
 
@@ -40,7 +40,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
+# installed.aafdsfaaa
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
@@ -160,13 +160,33 @@ bar {
 bindsym ctrl+Mod1+s exec "sleep 0.5 && xset dpms force off && i3lock"
 bindsym ctrl+Mod1+Left move workspace to output left
 bindsym ctrl+Mod1+Right move workspace to output right
-bindsym $mod+c exec spacefm
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+c exec pcmanfm
+bindsym $mod+b exec firefox
+bindsym $mod+g exec keepassx2
+bindsym $mod+x exec emacs 
+bindsym $mod+p exec pavucontrol
 
 # Autostart
 exec nm-applet
 exec dropbox
 exec tilda
+exec shutter --min_at_startup
+exec feh --bg-scale /home/jl/Downloads/hidden_constellation_by_kpekep-dbkcvjk.png
 
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome-stable'
-exec --no-startup-id i3-msg 'workspace 3; exec thunderbird'
+# Specific workspaces
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
+
+# Turn off screen and lock
+bindsym crtl+Mod1+s exec "xset dpms force off && sleep 1 && i3lock"
+
+# Lower and raise volume using keyboard, pulseaudio
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
+
+# Mute/unmute, pulseaudio
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
+
+# Lower and raise brightness, using light
+bindsym XF86MonBrightnessUp exec "light -A 5"
+bindsym XF86MonBrightnessDown "light -U 5"
