@@ -40,7 +40,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed
+# installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
@@ -157,6 +157,7 @@ bar {
 }
 
 # Custom keybindings
+# Mod1 = Alt left
 bindsym ctrl+Mod1+s exec "sleep 0.5 && xset dpms force off && i3lock"
 bindsym ctrl+Mod1+Left move workspace to output left
 bindsym ctrl+Mod1+Right move workspace to output right
@@ -165,6 +166,10 @@ bindsym $mod+b exec firefox
 bindsym $mod+g exec keepassx2
 bindsym $mod+x exec emacs 
 bindsym $mod+p exec pavucontrol
+bindsym $mod+Shift+v exec vlc
+
+# Opening certain directories with pcmanfm
+bindsym ctrl+Mod1+h exec pcmanfm "file:/home/jl"
 
 # Autostart
 exec nm-applet
@@ -172,6 +177,9 @@ exec dropbox
 exec tilda
 exec shutter --min_at_startup
 exec feh --bg-scale /home/jl/Downloads/hidden_constellation_by_kpekep-dbkcvjk.png
+# Enables powertop battery optimizations by default, script is allowed to run without password via sudoers file
+exec sudo /home/jl/powertopopt.sh
+#exec syndaemon -i 0.5 -t -K -R # Disable touchpad for 0.5 seconds on each keypress aside from modifier keys
 
 # Specific workspaces
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
@@ -179,6 +187,9 @@ exec --no-startup-id i3-msg 'workspace 2; exec thunderbird'
 
 # Turn off screen and lock
 bindsym crtl+Mod1+s exec "xset dpms force off && sleep 1 && i3lock"
+
+# Only turn off screen
+bindsym ctrl+Mod1+w exec "sleep 0.5 && xset dpms force off"
 
 # Lower and raise volume using keyboard, pulseaudio
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
@@ -189,4 +200,9 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
 # Lower and raise brightness, using light
 bindsym XF86MonBrightnessUp exec "light -A 5"
-bindsym XF86MonBrightnessDown "light -U 5"
+bindsym XF86MonBrightnessDown exec "light -U 5"
+
+# Screenshots!
+bindsym Print exec "maim ~/Dropbox/Screenshots/$(date +%F-%T).png"
+# With delay
+bindsym $mod+Print exec "maim -d 2 ~/Dropbox/Screenshots/$(date +%F-%T).png"
