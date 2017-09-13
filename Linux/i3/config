@@ -161,6 +161,8 @@ bar {
 bindsym ctrl+Mod1+s exec "sleep 0.5 && xset dpms force off && i3lock"
 bindsym ctrl+Mod1+Left move workspace to output left
 bindsym ctrl+Mod1+Right move workspace to output right
+bindsym ctrl+Mod1+Up move workspace to output up
+bindsym ctrl+Mod1+Down move workspace to output down
 bindsym $mod+c exec pcmanfm
 bindsym $mod+b exec firefox
 bindsym $mod+g exec keepassx2
@@ -177,8 +179,6 @@ exec dropbox
 exec tilda
 exec shutter --min_at_startup
 exec feh --bg-scale /home/jl/Downloads/hidden_constellation_by_kpekep-dbkcvjk.png
-# Enables powertop battery optimizations by default, script is allowed to run without password via sudoers file
-exec sudo /home/jl/powertopopt.sh
 #exec syndaemon -i 0.5 -t -K -R # Disable touchpad for 0.5 seconds on each keypress aside from modifier keys
 
 # Specific workspaces
