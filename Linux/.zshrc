@@ -150,6 +150,10 @@ alias i3config='vim ~/.config/i3/config'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 
+# Google Drive using gdrivefs
+alias gd='sudo gdfs -o allow_other /var/cache/gdfs.creds /mnt/gdrivefs'
+alias ugd='sudo umount /mnt/gdrivefs'
+
 # Access folders in pcmanfm quickly, opens a new tab
 alias CTF='pcmanfm "file:/home/jl/Dropbox/McGill/CTF"'
 alias ctf='pcmanfm "file:/home/jl/Dropbox/McGill/CTF"'
@@ -166,6 +170,7 @@ alias c302='pcmanfm "file:/home/jl/Dropbox/McGill/Fall 2017/COMP 302"'
 alias c310='pcmanfm "file:/home/jl/Dropbox/McGill/Fall 2017/COMP 310"'
 alias c350='pcmanfm "file:/home/jl/Dropbox/McGill/Fall 2017/COMP 350 - Numerical Analysis"'
 alias text='pcmanfm "file:/home/jl/Dropbox/McGill/Textbooks"'
+alias goo='pcmanfm "file:/mnt/gdrivefs"'
 
 # Faster cd
 alias cc251='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 251 - Algorithms & Data Structures"'
