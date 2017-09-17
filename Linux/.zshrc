@@ -131,15 +131,18 @@ alias rl='xrandr --output HDMI-1-1 --rotate left'
 alias rr='xrandr --output HDMI-1-1 --rotate right'
 
 # Cd in dropbox folder
-#alias drop='cd /home/jl/Dropbox'
+alias cdrop='cd /home/jl/Dropbox'
 # Repo folder
-alias repo='cd /home/jl/Dropbox/Repos'
+alias crepo='cd /home/jl/Dropbox/Repos'
 # Power off quickly
 alias off='systemctl poweroff'
 # Reboot quickly
 alias reboot='systemctl reboot'
 # Push using git quickly to master
 alias push='git push -u origin master'
+
+# Update quickly
+alias up='yaourt -Syua --no-confirm'
 
 
 # To quickly edit configs
@@ -150,7 +153,7 @@ alias zshrc='vim ~/.zshrc'
 # Access folders in pcmanfm quickly, opens a new tab
 alias CTF='pcmanfm "file:/home/jl/Dropbox/McGill/CTF"'
 alias ctf='pcmanfm "file:/home/jl/Dropbox/McGill/CTF"'
-alias pr='pcmanfm "file:/home/jl/Dropbox/Repos"'
+alias repo='pcmanfm "file:/home/jl/Dropbox/Repos"'
 alias drop='pcmanfm "file:/home/jl/Dropbox"'
 alias down='pcmanfm "file:/home/jl/Downloads"'
 alias org='pcmanfm "file:/home/jl/Dropbox/1.Org"'
@@ -164,3 +167,9 @@ alias c310='pcmanfm "file:/home/jl/Dropbox/McGill/Fall 2017/COMP 310"'
 alias c350='pcmanfm "file:/home/jl/Dropbox/McGill/Fall 2017/COMP 350 - Numerical Analysis"'
 alias text='pcmanfm "file:/home/jl/Dropbox/McGill/Textbooks"'
 
+# Faster cd
+alias cc251='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 251 - Algorithms & Data Structures"'
+alias cc230='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 230 - Logic and Computability"'
+alias cc302='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 302"'
+alias cc310='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 310"'
+alias cc350='cd "/home/jl/Dropbox/McGill/Fall 2017/COMP 350 - Numerical Analysis"'
